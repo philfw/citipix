@@ -1,22 +1,23 @@
 $('.entry').on('submit', function(event){
 	event.preventDefault();
 	changeBg();
+	$('#city-type').val('');
 });
 
 function changeBg (){
 	var entry = $('#city-type').val();
 	if (entry === 'new york'||entry ==='new york city'||entry ==='nyc'){
-		$('body').css('background', 'url(images/nyc.jpg) no-repeat center center fixed');
+		$('body').attr('class', 'nyc');
 	} else if (entry === 'san francisco'||entry==='sf'||entry==='bay area'){
-		$('body').css('background', 'url(images/sf.jpg) no-repeat center center fixed')
+		$('body').attr('class', 'sf');
 	} else if (entry === 'la'||entry==='lax'||entry==='los angeles'){
-		$('body').css('background', 'url(images/la.jpg) no-repeat center center fixed')
+		$('body').attr('class', 'la');
 	} else if (entry === 'austin'||entry==='atx'){
-		$('body').css('background', 'url(images/austin.jpg) no-repeat center center fixed')
+		$('body').attr('class', 'austin');
 	} else if (entry === 'sydney'||entry==='syd'){
-		$('body').css('background', 'url(images/sydney.jpg) no-repeat center center fixed')
-	} else {return entry};
-	
-	$('#city-type').attr('placeholder','Enter a city name...');
+		$('body').attr('class', 'sydney');
+	} else {
+		$('body').css('background', 'background: url(../images/citipix_skyline.jpg) no-repeat center center fixed');
+	};
 };
 
